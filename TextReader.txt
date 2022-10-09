@@ -1,0 +1,2 @@
+Hello this is the part of java assignment.
+this is the second line.
