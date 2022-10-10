@@ -1,54 +1,38 @@
 // Name : Savaliya Jaivin P.
 // ID : 21CE120
 
-// 12) Create an Association class that encapsulates two objects of different types. Similar
+// Create an Association class that encapsulates two objects of different types. Similar
 // to Exercise above, create a Transition class that does the same of Association class
 // with three objects.
 
-class Bank {
+class Association<T1, T2> {
+    T1 object1;
+    T2 object2;
 
-    private String name;
-
-    // Constructor of this class
-    Bank(String name) {
-
-        this.name = name;
-    }
-
-    // Method of Bank class
-    public String getBankName() {
-        // Returning name of bank
-        return this.name;
+    public Association(T1 object1, T2 object2) {
+        this.object1 = object1;
+        this.object2 = object2;
     }
 }
 
-class Employee {
-    // Attributes of employee
-    private String name;
+class Transition<T1, T2, T3> {
+    T1 object1;
+    T2 object2;
+    T3 object3;
 
-    // Employee name
-    Employee(String name) {
-        // This keyword refers to current instance itself
-        this.name = name;
-    }
-
-    // Method of Employee class
-    public String getEmployeeName() {
-        // returning the name of employee
-        return this.name;
+    public Transition(T1 object1, T2 object2, T3 object3) {
+        this.object1 = object1;
+        this.object2 = object2;
+        this.object3 = object3;
     }
 }
 
-class pr12 {
-
-    // Main driver method
+public class pr12 {
     public static void main(String[] args) {
+        Association<String, Integer> asso1 = new Association<String, Integer>("One", 1);
+        System.out.println(asso1.object1 + " " + asso1.object2);
 
-        // Creating objects of bank and Employee class
-        Bank bank = new Bank("UCO");
-        Employee emp = new Employee("Jaivin");
-        System.out.println(emp.getEmployeeName()
-                + " is employee of "
-                + bank.getBankName());
+        Transition<String, Integer, Float> tran1 = new Transition<String, Integer, Float>("Int-Float", 10, 11.234F);
+        System.out.println(tran1.object1 + " " + tran1.object2 + " " + tran1.object3);
     }
 }
